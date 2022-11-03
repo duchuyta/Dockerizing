@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0.30
+    container_name: mysql80
+    ports:
+      - "3306:3306"
+    restart: always
+    environment:
+      - MYSQL_DATABASE=ffm_db
+      - MYSQL_USER=zclouds
+      - MYSQL_PASSWORD=abc13579!@
+      - MYSQL_ROOT_PASSWORD=zclouds123!@
+
+    volumes:
+      - ./mysql.cnf:/etc/mysql/conf.d/mysql.cnf
+      - mysql-data:/var/lib/mysql
+    networks:
+      - shared_net  
+  
+volumes:
+  mysql-data:
+
+networks:
+  shared_net:
