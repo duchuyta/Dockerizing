@@ -10,7 +10,7 @@ RUN mkdir -p target/dependency && (cd target/dependency; jar -xf ../*.jar)
 # Prod
 FROM openjdk:11
 
-VOLUME /app
+VOLUME /opt/tomcat
 
 ARG DEPENDENCY=/workspace/target/dependency
 
