@@ -12,6 +12,19 @@ services:
       - SPRING_DATASOURCE_URL= jdbc:mysql://db:3306/<database>?useUnicode=true&characterEncoding=utf8&useSSL=false
       - SPRING_DATASOURCE_USERNAME=<username>
       - SPRING_DATASOURCE_PASSWORD=<password>
+      - SPRING_PROFILES_ACTIVE=<profile1, profile2...>
+      - SERVER_PORT=8080
+      - SERVER_USE-FORWARD-HEADERS=true
+      - SERVER_FORWARD-HEADERS-STRATEGY=framework
+      - SERVER_TOMCAT_ACCEPT-COUNT=100
+      - SERVER_TOMCAT_THREADS_MAX=200
+      - SERVER_TOMCAT_THREADS_MIN-SPARE=10
+      - SERVER_TOMCAT_BASEDIR=app
+      - SERVER_TOMCAT_ACCESSLOG_DIRECTORY=logs
+      - SERVER_TOMCAT_ACCESSLOG_ENABLED=true
+      - SERVER_TOMCAT_ACCESSLOG_ROTATE=true
+      - SERVER_TOMCAT_ACCESSLOG_MAX-DAYS=60
+      - SERVER_TOMCAT_REMOTEIP_REMOTE-IP-HEADER=X-FORWARDED-FOR
     volumes:
       - app-data:/opt/tomcat
     networks:
