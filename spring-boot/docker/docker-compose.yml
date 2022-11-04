@@ -25,6 +25,7 @@ services:
       - SERVER_TOMCAT_ACCESSLOG_ROTATE=true
       - SERVER_TOMCAT_ACCESSLOG_MAX-DAYS=60
       - SERVER_TOMCAT_REMOTEIP_REMOTE-IP-HEADER=X-FORWARDED-FOR
+      - SERVER_TOMCAT_ACCESSLOG_PATTERN=%{X-Forwarded-For}i %l %u %t "%r" %s %b
     volumes:
       - app-data:/opt/tomcat
     networks:
