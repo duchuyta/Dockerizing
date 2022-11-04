@@ -13,7 +13,7 @@ done
 
 docker login -u "$REGISTRY_USERNAME" -p "$REGISTRY_PASSWORD" $REGISTRY
 
-docker build -t $REGISTRY:$TAG docker/
+docker build -t $REGISTRY:$TAG -f docker/Dockerfile .
 docker tag $IMAGE:$TAG $REGISTRY/$IMAGE:$TAG
 docker push $REGISTRY$IMAGE:$TAG
 
