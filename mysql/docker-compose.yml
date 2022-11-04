@@ -15,10 +15,12 @@ services:
     volumes:
       - db-data:/var/lib/mysql
     networks:
-      - shared_net
+      - bridge-net
 
 volumes:
   db-data:
+    external: false
 
 networks:
-  shared_net:
+  bridge-net:
+    driver: bridge
